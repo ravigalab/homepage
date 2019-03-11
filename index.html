@@ -2,23 +2,316 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Raviga | Homepage</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Raviga - Soluções Móveis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/new-age.min.css" rel="stylesheet">
+
+    <!-- local CSS -->
+    <style>
+
+        section.cta .cta-content h2 {
+            max-width: 100% !important; 
+        }
+
+        
+        section.contact ul.list-social li.social-facebook a {
+            background-color: #1ebea5ad !important;
+        }
+  section.contact ul.list-social li.social-facebook a:hover {
+            background-color: #1ebea5 !important;
+        }
+  
+    </style>
+
+    <!-- notification push -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        
+        console.log(window.OneSignal);
+
+        OneSignal.push(function() {
+            OneSignal.init({
+            appId: "5e4b082e-20f1-424a-8001-5b301fbb917b",
+        });
     
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "5e4b082e-20f1-424a-8001-5b301fbb917b",
     });
-  });
+        
 </script>
-    
+
 </head>
 
-<body>
-    <h1>Welcome to this page!</h1>
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Raviga</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <!--                Menu-->
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#download">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-7 my-auto">
+                    <div class="header-content mx-auto">
+                        <h1 class="mb-5">Raviga desenvolve soluções móveis para seu negócio. Entendemos você antes de qualquer linha de código!
+                        </h1>
+                        <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Começar agora!</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <!--                                    <img src="https://blackrockdigital.github.io/startbootstrap-new-age/img/demo-screen-1.jpg" class="img-fluid" alt="">-->
+                                    <img src="https://lh3.googleusercontent.com/jkofNHsgAyHQXphs1_vtO5bEoYr_7vPqebFRGBd8tHgRGH_CNwDQZ0IB_2l51L_31U8=w624-h1104-rw" class="img-fluid" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="download bg-primary text-center" id="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h2 class="section-heading">Descubra tudo o que está ouvindo sobre nós!</h2>
+                    <p>Conheça o nosso portfolio acessando as lojas de aplicativos! Em breve App Store ;)</p>
+                    <div class="badges">
+                        <a class="badge-link" href="https://play.google.com/store/apps/developer?id=Freela"><img src="https://blackrockdigital.github.io/startbootstrap-new-age/img/google-play-badge.svg" alt=""></a>
+                        <a class="badge-link" style="opacity: 0.5"><img src="https://blackrockdigital.github.io/startbootstrap-new-age/img/app-store-badge.svg" alt=""></a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row" style="margin-top: 60px">
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="https://lh3.googleusercontent.com/sUWAKC0LtksbFHalXE1mY7tpSPNlgTqzwraGQzM_myFUHFBIG3pXw_sf5hiLkrZJIzEq=h548-rw" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="https://lh3.googleusercontent.com/AIz9gkxVvBb1JSQ_e494F07xbPkOaI3yY2LNv0ROS-I71VSH8QjPjB7Bs9rkfMTg_D4=h548-rw" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="https://lh3.googleusercontent.com/OJ43hwE9rWXFKqBjqaatprxu7kI_7lFoVIU_gl-XoqW2fxk0lOl5uFnPWHIUJMsFFvxI=h548-rw" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2>Recursos Ilimitados, Diversão Ilimitada</h2>
+                <p class="text-muted">Veja tudo o que pode conter no seu aplicativo!</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="https://lh3.googleusercontent.com/jRYIA4roDC2-fmbM9f2DR4k-GlvCtg1krbpHbZ7V0RdsoBkLW0_gGfK6nlUCf0uN8Sc=h508-rw" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 my-auto">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <i class="icon-screen-smartphone text-primary"></i>
+                                    <h3>Android, iOS e PWA</h3>
+                                    <p class="text-muted">As plataformas mais utilizadas no mundo, e agora também PWA!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <i class="icon-camera text-primary"></i>
+                                    <h3>Recursos</h3>
+                                    <p class="text-muted">Imagens, vídeos, animações, localização, notificação e muito mais!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <i class="icon-present text-primary"></i>
+                                    <h3>Recompensa</h3>
+                                    <p class="text-muted">Mais fácil próximo o relacionamento com seu cliente, notifique as novidades!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <i class="icon-lock-open text-primary"></i>
+                                    <h3>Segurança</h3>
+                                    <p class="text-muted">O acesso restrito apenas a clientes com toda a segurança, Google, Facebook, etc? Nós temos!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Pare de esperar.<br>Vamos construir.</h2>
+                <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Vamos começar!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section class="contact bg-primary" id="contact">
+        <div class="container">
+            <h2>Nós
+                <i class="fas fa-heart"></i>
+                novos amigos!</h2>
+            <ul class="list-inline list-social">
+                <!--
+                <li class="list-inline-item social-twitter">
+                    <a href="#">
+                        <i class="fab fa-apple"></i>
+                    </a>
+                </li>
+-->
+                <li class="list-inline-item social-facebook">
+                    <a href="https://api.whatsapp.com/send?phone=5519996198801&text=Ola_Raviga" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item social-google-plus">
+                    <a href="mailto: andersonrafaelferreira@gmail.com">
+                        <!--                        <i class="fab fa-google-plus-g"></i>-->
+                        <i class="fab fa-google"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Raviga 2019. All Rights Reserved.</p>
+            <!--
+<ul class="list-inline">
+    <li class="list-inline-item">
+        <a href="#">Privacy</a>
+    </li>
+    <li class="list-inline-item">
+        <a href="#">Terms</a>
+    </li>
+    <li class="list-inline-item">
+        <a href="#">FAQ</a>
+    </li>
+</ul>
+-->
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/jquery/jquery.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-new-age/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-new-age/js/new-age.min.js"></script>
+
 </body>
 
 </html>
