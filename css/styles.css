@@ -10932,13 +10932,14 @@ section {
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black]::after {
   content: "";
-  background-image: url("../assets/img/portrait_black.png");
+  background-image: url("../assets/img/iphonex.png");
 }
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .button {
   display: none;
   top: 0%;
   left: 0%;
+  right: 0%;
   width: 100%;
   height: 100%;
 }
