@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+
+    <style>
+        main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo-mask {
+  width: 200px;
+  aspect-ratio: 1;
+  display: inline-block;
+  overflow: hidden;
+  mask-image:
+    radial-gradient(154% 68.5% at top, #0000 79.5%, #269af2 80%),
+    radial-gradient(154% 68.5% at bottom, #269af2 79.5%, #0000 80%),
+    radial-gradient(154% 68.5% at top, #0000 79.5%, #269af2 80%);
+  mask-size: 50.5% 220%;
+  mask-position: -100% 0%, 0% 0%, 100% 0%;
+  mask-repeat: no-repeat;
+  animation: waveMask 2s infinite linear;
+}
+
+.logo-mask img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes waveMask {
+  33%  { mask-position: 0% 33%, 100% 33%, 200% 33%; }
+  66%  { mask-position: -100% 66%, 0% 66%, 100% 66%; }
+  100% { mask-position: 0% 100%, 100% 100%, 200% 100%; }
+}
+
+html{
+  background: black
+}
+    </style>
+</head>
+<body>
+    <main>
+<div class="logo-mask">  
+  <img src="https://lqagroup.com/nitropack_static/YNgkyrSBMggnqxNlMSmOYZOYCyZdCYJh/assets/images/optimized/rev-3532f36/lqagroup.com/wp-content/uploads/2023/11/White-lqa-logo.svg" alt="Logo"/>
+</div>
+</main>
+</body>
+</html>

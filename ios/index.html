@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capturar Foto (HTML5)</title>
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 16px; background: #0b0c0f; color: #fff; }
+    main { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin: 0 0 12px; }
+    .grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    @media (min-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { background: #121318; border: 1px solid #1e2130; border-radius: 12px; padding: 12px; }
+    .camera-wrap { position: relative; aspect-ratio: 3/4; background: #0e0f14; border-radius: 10px; overflow: hidden; }
+    video { width: 100%; height: 100%; object-fit: cover; background: #000; }
+    .controls { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    button { appearance: none; border: 1px solid #2a2d3f; background: #1a1c27; color: #fff; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    button:hover { background: #232637; }
+    .preview-wrap { display: grid; place-items: center; aspect-ratio: 3/4; background: #0e0f14; border-radius: 10px; overflow: hidden; }
+    #preview { max-width: 100%; max-height: 100%; display: none; }
+    .fallback { margin-top: 10px; }
+    .note { font-size: .9rem; opacity: .8; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tirar foto com HTML5 e ver prévia</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="camera-wrap">
+          <video id="camera" autoplay playsinline muted></video>
+        </div>
+        <div class="controls">
+          <button id="capture">Capturar foto</button>
+          <button id="toggle">Trocar câmera</button>
+        </div>
+        <div class="fallback" id="fallback" style="display:none">
+          <label>
+            Ou selecione/capture uma imagem:
+            <input id="fileInput" type="file" accept="image/*" capture="environment" />
+          </label>
+        </div>
+        <p class="note">Dica: em iOS/Safari, a câmera só funciona em conexões seguras (HTTPS) ou em <code>localhost</code>.</p>
+      </div>
+      <div class="card">
+        <div class="preview-wrap">
+          <img id="preview" alt="Prévia da foto" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const videoEl = document.getElementById('camera');
+    const captureBtn = document.getElementById('capture');
+    const toggleBtn = document.getElementById('toggle');
+    const previewImg = document.getElementById('preview');
+    const fallbackEl = document.getElementById('fallback');
+    const fileInput = document.getElementById('fileInput');
+
+    let stream = null;
+    let facingMode = 'environment';
+
+    async function startCamera() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        fallbackEl.style.display = 'block';
+        return;
+      }
+      try {
+        // Para iOS Safari, playsinline + muted permitem autoplay.
+        const constraints = { video: { facingMode: { ideal: facingMode } }, audio: false };
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+        videoEl.srcObject = stream;
+        await videoEl.play();
+        fallbackEl.style.display = 'none';
+      } catch (err) {
+        console.error('Erro ao iniciar câmera:', err);
+        fallbackEl.style.display = 'block';
+      }
+    }
+
+    function capturePhoto() {
+      if (!videoEl.videoWidth || !videoEl.videoHeight) return;
+      const w = videoEl.videoWidth;
+      const h = videoEl.videoHeight;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(videoEl, 0, 0, w, h);
+      const dataUrl = canvas.toDataURL('image/jpeg');
+      previewImg.src = dataUrl;
+      previewImg.style.display = 'block';
+    }
+
+    async function toggleCamera() {
+      facingMode = facingMode === 'environment' ? 'user' : 'environment';
+      if (stream) stream.getTracks().forEach(t => t.stop());
+      await startCamera();
+    }
+
+    // Fallback por arquivo
+    if (fileInput) {
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+          previewImg.src = e.target.result;
+          previewImg.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Boas práticas ao ocultar/mostrar a página
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (stream) stream.getTracks().forEach(t => t.stop());
+      } else if (!videoEl.srcObject) {
+        startCamera();
+      }
+    });
+
+    captureBtn.addEventListener('click', capturePhoto);
+    toggleBtn.addEventListener('click', toggleCamera);
+
+    startCamera();
+  </script>
+</body>
+</html>
