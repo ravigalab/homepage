@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Fullscreen</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* impede scroll externo */
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none; /* remove borda */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe src="https://next-js-food-deliver-4dzr.bolt.host/" id="daoGo"></iframe>
+
+    <script>
+        // Exemplo opcional: ajustar dinamicamente se necessário
+        function ajustarIframe() {
+            const iframe = document.getElementById("daoGo");
+            iframe.style.width = window.innerWidth + "px";
+            iframe.style.height = window.innerHeight + "px";
+        }
+
+        window.addEventListener("resize", ajustarIframe);
+        ajustarIframe();
+    </script>
+
+</body>
+</html>
