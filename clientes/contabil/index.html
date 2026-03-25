@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contabilidade Next</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-main: #f5eee4;
+      --bg-dark: #0f172a;
+      --accent: #f4b183;
+      --accent-strong: #e38a3b;
+      --text-dark: #111827;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout base */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 238, 228, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      color: var(--bg-dark);
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-strong);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      font-size: 0.9rem;
+      background: var(--bg-dark);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.04);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--bg-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.6rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--bg-dark);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+      background: #020617;
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(15, 23, 42, 0.18);
+      background: transparent;
+      color: var(--bg-dark);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.04);
+      border-color: rgba(15, 23, 42, 0.3);
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background: var(--bg-dark);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border: 3px solid rgba(248, 250, 252, 0.9);
+    }
+
+    .hero-card-photo-inner {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, #fef3c7, #f97316);
+    }
+
+    .hero-card-name {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-card-role {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-card-text {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-card-metrics {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: #cbd5f5;
+    }
+
+    .hero-card-metric strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #facc15;
+    }
+
+    /* Seções genéricas */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-strong);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    /* Sobre */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .sobre-text p + p {
+      margin-top: 0.9rem;
+    }
+
+    .sobre-highlight {
+      margin-top: 1.2rem;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.03);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .sobre-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .sobre-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .sobre-card-list {
+      list-style: none;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .sobre-card-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .sobre-card-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+      margin-top: 0.35rem;
+    }
+
+    /* Por que ter um contador */
+    .contador-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(15, 23, 42, 0.16);
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .pill-strong {
+      background: var(--bg-dark);
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    .contador-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .contador-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .contador-card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    /* Soluções corporativas */
+    .corporativo {
+      background: var(--bg-dark);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 2rem;
+      box-shadow: var(--shadow-soft);
+      margin-top: 1rem;
+    }
+
+    .corporativo-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .corporativo-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .corporativo-subtitle {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      max-width: 420px;
+    }
+
+    .corporativo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .corporativo-item {
+      padding: 0.8rem 0.9rem;
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .corporativo-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .corporativo-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-light {
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248, 250, 252, 0.7);
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .btn-light:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Insights */
+    .insights-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .insight-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 130px;
+    }
+
+    .insight-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-strong);
+      margin-bottom: 0.4rem;
+    }
+
+    .insight-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--bg-dark);
+    }
+
+    .insight-link {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--accent-strong);
+      cursor: pointer;
+    }
+
+    /* Atendemos sem fronteiras */
+    .global {
+      margin-top: 2.5rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: var(--white);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .global-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .global-text {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      margin-bottom: 1.2rem;
+    }
+
+    .global-map {
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-md);
+      background: radial-gradient(circle at 20% 20%, #facc15, transparent 55%),
+                  radial-gradient(circle at 80% 60%, #38bdf8, transparent 55%),
+                  #020617;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .global-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #facc15;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.9);
+    }
+
+    .global-dot:nth-child(1) { top: 35%; left: 30%; }
+    .global-dot:nth-child(2) { top: 50%; left: 55%; }
+    .global-dot:nth-child(3) { top: 40%; left: 75%; }
+
+    /* Serviços */
+    .servicos {
+      margin-top: 1rem;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .servico-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+    }
+
+    .servico-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+    }
+
+    .servico-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .servico-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Contato */
+    .contato {
+      margin-top: 2.5rem;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contato-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .contato-form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .field label {
+      color: var(--text-muted);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      background: #f9fafb;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent-strong);
+      background: #ffffff;
+    }
+
+    .field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .contato-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .sobre-grid,
+      .contador-grid,
+      .global,
+      .contato {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .corporativo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .insights-grid,
+      .servicos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .insights-grid,
+      .servicos-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .corporativo {
+        padding: 1.6rem 1.4rem;
+      }
+
+      .global {
+        padding: 1.6rem;
+      }
+
+      .contato {
+        padding: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header id="topo">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">n</div>
+        <span>next</span>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#insights">Insights</a>
+        <a href="#contato" class="nav-cta">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            <span>Contabilidade consultiva para o seu crescimento</span>
+          </div>
+          <h1 class="hero-title">Contabilidade Next</h1>
+          <p class="hero-subtitle">Transformando sua gestão financeira com estratégia, clareza e dados confiáveis.</p>
+          <p class="hero-name">Ana Carolina</p>
+          <p class="hero-role">Contadora • Especialista em gestão financeira empresarial</p>
+
+          <div class="hero-actions">
+            <button class="btn-primary" data-scroll="#contato">Saiba mais</button>
+            <button class="btn-ghost" data-scroll="#sobre">Ver como funciona</button>
+          </div>
+          <p class="hero-note">Atendimento digital para empresas em todo o Brasil e exterior.</p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-badge">+10 anos em contabilidade empresarial</div>
+          <div class="hero-card-photo">
+            <!-- Troque este bloco por uma foto real se quiser -->
+            <div class="hero-card-photo-inner"></div>
+          </div>
+          <div class="hero-card-name">Ana Carolina</div>
+          <div class="hero-card-role">Contadora responsável • CRC ativo</div>
+          <p class="hero-card-text">
+            A Next nasceu para ser parceira estratégica de empreendedores, indo além da emissão de guias
+            e obrigações fiscais. Aqui, a contabilidade é ferramenta de decisão.
+          </p>
+          <div class="hero-card-metrics">
+            <div class="hero-card-metric">
+              <strong>150+</strong>
+              empresas atendidas
+            </div>
+            <div class="hero-card-metric">
+              <strong>20%</strong>
+              média de economia tributária
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Sobre a Contabilidade Next</div>
+          <h2 class="section-title">Contabilidade consultiva, com foco em gestão e crescimento</h2>
+          <p class="section-subtitle">
+            A Next foi criada para transformar a relação de empreendedores com os números do negócio,
+            trazendo clareza, previsibilidade e estratégia.
+          </p>
+        </div>
+
+        <div class="sobre-grid">
+          <div class="sobre-text">
+            <p>
+              Atuamos de forma personalizada e humanizada, entendendo a realidade de cada empresa para
+              construir uma contabilidade que faça sentido no dia a dia da gestão.
+            </p>
+            <p>
+              Nosso objetivo é ser um parceiro estratégico na tomada de decisões, oferecendo relatórios
+              gerenciais, indicadores financeiros e suporte próximo ao empreendedor.
+            </p>
+            <div class="sobre-highlight">
+              Trabalhamos com empresas de diversos segmentos e portes, sempre com foco em crescimento
+              sustentável, organização financeira e segurança fiscal.
+            </div>
+          </div>
+
+          <aside class="sobre-card">
+            <div class="sobre-card-title">Como a Next atua na prática</div>
+            <ul class="sobre-card-list">
+              <li>
+                <span class="sobre-card-dot"></span>
+                <span>Implantação de rotinas financeiras simples e eficientes.</span>
+              </li>
+              <li>
+                <span class="sobre-card-dot"></span>
+                <span>Leitura e explicação dos números em linguagem acessível.</span>
+              </li>
+              <li>
+                <span class="sobre-card-dot"></span>
+                <span>Planejamento tributário alinhado ao momento da empresa.</span>
+              </li>
+              <li>
+                <span class="sobre-card-dot"></span>
+                <span>Acompanhamento próximo para decisões mais seguras.</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por que ter um contador -->
+    <section>
+      <div class="container contador-grid">
+        <div>
+          <div class="section-kicker">Por que ter um contador?</div>
+          <h2 class="section-title">Contabilidade como ferramenta de crescimento</h2>
+          <p class="section-subtitle">
+            Empreendedor, com um CNPJ bem estruturado e uma contabilidade ativa, você pode reduzir riscos,
+            evitar multas e ainda economizar impostos.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill pill-strong">Pessoa Jurídica</span>
+            <span class="pill">Pessoa Física</span>
+            <span class="pill">MEI em crescimento</span>
+          </div>
+
+          <p>
+            O contador é essencial para a saúde financeira do negócio: organiza as finanças, garante o
+            cumprimento das obrigações fiscais e ajuda a planejar o futuro da empresa.
+          </p>
+        </div>
+
+        <aside class="contador-card">
+          <div class="contador-card-title">Benefícios de uma contabilidade ativa</div>
+          <p class="contador-card-text">
+            Com acompanhamento contábil constante, você deixa de tomar decisões no escuro e passa a
+            enxergar o impacto real de cada escolha no caixa da empresa.
+          </p>
+          <ul class="sobre-card-list">
+            <li>
+              <span class="sobre-card-dot"></span>
+              <span>Redução de riscos de multas e penalidades fiscais.</span>
+            </li>
+            <li>
+              <span class="sobre-card-dot"></span>
+              <span>Escolha adequada do regime tributário.</span>
+            </li>
+            <li>
+              <span class="sobre-card-dot"></span>
+              <span>Indicadores financeiros para decisões mais assertivas.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Soluções corporativas -->
+    <section>
+      <div class="container">
+        <div class="corporativo">
+          <div class="corporativo-header">
+            <div>
+              <div class="section-kicker" style="color:#facc15;">Clientes corporativos</div>
+              <div class="corporativo-title">Soluções para empresas em expansão</div>
+            </div>
+            <p class="corporativo-subtitle">
+              Atendimento especializado para empresas de médio e grande porte, com foco em governança,
+              eficiência tributária e visão estratégica de longo prazo.
+            </p>
+          </div>
+
+          <div class="corporativo-grid">
+            <div class="corporativo-item">
+              <strong>Planejamento tributário</strong>
+              Estruturação para pagar apenas o necessário, com segurança.
+            </div>
+            <div class="corporativo-item">
+              <strong>Gestão financeira</strong>
+              Acompanhamento de fluxo de caixa, margens e resultados.
+            </div>
+            <div class="corporativo-item">
+              <strong>Consultoria estratégica</strong>
+              Apoio em decisões de investimento e crescimento.
+            </div>
+            <div class="corporativo-item">
+              <strong>Relatórios gerenciais</strong>
+              Indicadores claros para diretoria e investidores.
+            </div>
+            <div class="corporativo-item">
+              <strong>Revisão fiscal</strong>
+              Análise de riscos e oportunidades de recuperação.
+            </div>
+            <div class="corporativo-item">
+              <strong>Onboarding dedicado</strong>
+              Transição organizada da contabilidade anterior para a Next.
+            </div>
+          </div>
+
+          <div class="corporativo-footer">
+            <button class="btn-light" data-scroll="#contato">Falar com o time corporativo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="insights">
+      <div class="container">
+        <div class="insights-header">
+          <div>
+            <div class="section-kicker">Insights</div>
+            <h2 class="section-title">Conteúdos para decisões mais conscientes</h2>
+            <p class="section-subtitle">
+              Estar atualizado sobre mudanças tributárias e tendências da contabilidade é essencial para
+              manter o negócio competitivo e seguro.
+            </p>
+          </div>
+        </div>
+
+        <div class="insights-grid">
+          <article class="insight-card">
+            <div>
+              <div class="insight-tag">Gestão</div>
+              <div class="insight-title">Alta taxa de mortalidade empresarial</div>
+              <p>Como a falta de controle financeiro impacta diretamente a sobrevivência das empresas.</p>
+            </div>
+            <div class="insight-link">Ler mais</div>
+          </article>
+
+          <article class="insight-card">
+            <div>
+              <div class="insight-tag">Fiscal</div>
+              <div class="insight-title">Multas e penalidades fiscais</div>
+              <p>Os riscos de não cumprir prazos e obrigações com o fisco.</p>
+            </div>
+            <div class="insight-link">Ler mais</div>
+          </article>
+
+          <article class="insight-card">
+            <div>
+              <div class="insight-tag">Indicadores</div>
+              <div class="insight-title">Decisões baseadas em dados</div>
+              <p>Por que olhar para indicadores muda o jogo da gestão.</p>
+            </div>
+            <div class="insight-link">Ler mais</div>
+          </article>
+
+          <article class="insight-card">
+            <div>
+              <div class="insight-tag">Tributário</div>
+              <div class="insight-title">Escolha do regime tributário</div>
+              <p>Como um enquadramento inadequado pode corroer sua margem.</p>
+            </div>
+            <div class="insight-link">Ler mais</div>
+          </article>
+        </div>
+
+        <!-- Atendemos sem fronteiras -->
+        <div class="global">
+          <div>
+            <div class="section-kicker" style="color:#facc15;">Atendemos sem fronteiras</div>
+            <h3 class="global-title">Contabilidade digital, onde você estiver</h3>
+            <p class="global-text">
+              Com processos 100% online, conseguimos atender clientes em qualquer lugar do Brasil e no
+              exterior, mantendo a mesma qualidade, proximidade e segurança.
+            </p>
+            <button class="btn-primary" data-scroll="#contato">Entre em contato</button>
+          </div>
+          <div class="global-map">
+            <div class="global-dot"></div>
+            <div class="global-dot"></div>
+            <div class="global-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="servicos">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Nossos serviços</div>
+          <h2 class="section-title">Soluções contábeis para o seu negócio</h2>
+          <p class="section-subtitle">
+            Do início da jornada ao momento de expansão, a Next acompanha cada fase da sua empresa.
+          </p>
+        </div>
+
+        <div class="servicos-grid">
+          <div class="servico-card">
+            <div class="servico-icon">📊</div>
+            <div class="servico-title">Assessoria Contábil</div>
+            <p class="servico-text">
+              Rotinas contábeis completas, obrigações fiscais e suporte contínuo ao empreendedor.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <div class="servico-icon">💰</div>
+            <div class="servico-title">Consultoria Financeira</div>
+            <p class="servico-text">
+              Organização de fluxo de caixa, análise de resultados e apoio na tomada de decisões.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <div class="servico-icon">🤝</div>
+            <div class="servico-title">Profissionais Unidos</div>
+            <p class="servico-text">
+              Rede de parceiros para demandas jurídicas, societárias e de planejamento sucessório.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <div class="servico-icon">🧾</div>
+            <div class="servico-title">Abertura de CNPJ</div>
+            <p class="servico-text">
+              Do zero ao CNPJ ativo, com enquadramento tributário adequado ao seu modelo de negócio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="container">
+        <div class="contato">
+          <div>
+            <div class="section-kicker">Entre em contato</div>
+            <h2 class="section-title">Vamos transformar a gestão financeira do seu negócio</h2>
+            <p class="contato-text">
+              Preencha os dados ao lado e conte um pouco sobre a sua empresa. Em breve retornaremos com
+              um diagnóstico inicial e próximos passos.
+            </p>
+            <button class="btn-primary" data-scroll="#topo">Voltar ao topo</button>
+          </div>
+
+          <form class="contato-form" id="contato-form">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="seuemail@empresa.com" required />
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nome da empresa (opcional)" />
+            </div>
+            <div class="field">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua necessidade"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Fale conosco</button>
+            <p class="contato-note" id="contato-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo-mark">n</div>
+        <div>
+          <div>next</div>
+          <div>Contabilidade Next</div>
+        </div>
+      </div>
+      <div>© 2023 Todos os direitos reservados</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Scroll suave para âncoras internas
+  document.querySelectorAll("[data-scroll]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = document.querySelector(btn.getAttribute("data-scroll"));
+      if (!target) return;
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: "smooth"
+      });
+    });
+  });
+
+  // Simulação simples de envio de formulário (sem backend)
+  var form = document.getElementById("contato-form");
+  var statusEl = document.getElementById("contato-status");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    statusEl.textContent = "Enviando...";
+    setTimeout(function () {
+      statusEl.textContent = "Mensagem enviada! Em breve entraremos em contato.";
+      form.reset();
+    }, 800);
+  });
+</script>
+</body>
+</html>
