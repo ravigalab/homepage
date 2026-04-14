@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RBF - Sua Contabilidade Inteligente</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <!-- <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
+              <circle cx="16" cy="16" r="14" fill="#10B981" stroke="#1E3A8A" stroke-width="2"/>
+              <circle cx="16" cy="16" r="8" fill="#1E3A8A"/>
+              <text x="40" y="22" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E3A8A">RBF</text>
+            </svg> -->
+            <img src="./logo_header.png" width="75" />
+          </div>
+          <nav class="nav">
+            <a href="#servicos">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#materiais">Sua Jornada Fácil</a>
+            <a href="#blog">Fique de 👀</a>
+            <a href="#contato">Contato</a>
+          </nav>
+          <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-nav">
+          <a href="#servicos">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#materiais">Sua Jornada Fácil</a>
+            <a href="#blog">Fique de 👀</a>
+            <a href="#contato">Contato</a>
+          <button class="btn-primary mobile-cta">Fale com um especialista</button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Contabilidade 100% digital para MEIs
+            </div>
+            <h1>Sua contabilidade te abandona quando você <span class="hero-highlight">mais precisa?</span></h1>
+            <p>Com a RBF, você tem suporte humano de verdade, atendimento ágil e uma contabilidade que realmente entende o seu negócio — sem burocracia, sem enrolação.</p>
+            <div class="hero-actions">
+              <button class="btn-primary btn-hero">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Fale com um especialista
+              </button>
+              <!-- <button class="btn-ghost">
+                Ver como funciona
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button> -->
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <span class="stat-number">350+</span>
+                <span class="stat-label">Empreendedores atendidos</span>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Digital e online</span>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat">
+                <span class="stat-number">4h</span>
+                <span class="stat-label">Tempo médio de resposta</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card-main">
+              <img src="https://images.pexels.com/photos/8297041/pexels-photo-8297041.jpeg" alt="Photo by Mikhail Nilov: https://www.pexels.com/photo/a-woman-sitting-at-the-table-8297041/">
+            </div>
+            <div class="hero-float-card card-tax">
+              <div class="float-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="float-card-title">Imposto reduzido</div>
+                <div class="float-card-sub">Economia garantida</div>
+              </div>
+            </div>
+            <div class="hero-float-card card-doc">
+              <div class="float-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="float-card-title">Docs em dia</div>
+                <div class="float-card-sub">Sem atrasos</div>
+              </div>
+            </div>
+            <div class="hero-float-card card-support">
+              <div class="float-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="float-card-title">Suporte humano</div>
+                <div class="float-card-sub">Seg – Sex</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-dark" id="servicos">
+      <div class="container">
+        <div class="services-header">
+          <h2>Chegou a hora de pagar menos impostos e dar um fim à burocracia.</h2>
+          <p>Entendemos a sua rotina como ninguém e por isso criamos soluções que fazem mesmo a diferença.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="5" y="5" width="30" height="30" rx="4" stroke="#10B981" stroke-width="2"/>
+                <path d="M12 20h16M12 14h16M12 26h10" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Plataforma exclusiva</h3>
+            <p>Sua comunicação centralizada. Organize documentos, envie informações e acompanhe tudo em um só lugar.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="15" stroke="#10B981" stroke-width="2"/>
+                <path d="M20 10v10l6 6" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Transição sem dor de cabeça</h3>
+            <p>Trazemos seus dados da contabilidade antiga sem complicação.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M20 5L25 15H35L27 22L30 32L20 26L10 32L13 22L5 15H15L20 5Z" stroke="#10B981" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Atendimento rápido de verdade</h3>
+            <p>Sem enrolação. Nossos clientes recebem respostas imas horas possível.</p>
+          </div>
+
+          <div class="service-card light">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="8" y="12" width="24" height="20" rx="2" stroke="#1E3A8A" stroke-width="2"/>
+                <path d="M14 8v8M26 8v8M8 20h24" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Economize nos impostos</h3>
+            <p>Redução da carga tributária de forma legal e segura.</p>
+          </div>
+
+          <div class="service-card light">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="15" r="5" stroke="#1E3A8A" stroke-width="2"/>
+                <path d="M10 32c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Assessoria Contábil Completa</h3>
+            <p>Cuidamos de tudo para sua PJ, em todas fases da sua carreira.</p>
+          </div>
+
+          <div class="service-card light">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="10" y="10" width="20" height="20" rx="2" stroke="#1E3A8A" stroke-width="2"/>
+                <path d="M20 16v8M16 20h8" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Para empreendedores de todo o Brasil</h3>
+            <p>Atendemos em todos os estados.</p>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <button class="btn-primary">
+            Fale com um especialista
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial" id="depoimentos">
+      <div class="container">
+        <div class="testimonial-content">
+          <div class="testimonial-logo">
+            <!-- <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="38" fill="#E8F5E9" stroke="#10B981" stroke-width="2"/>
+              <circle cx="40" cy="40" r="20" fill="#10B981"/>
+            </svg> -->
+            <img src="./logo_header.png" width="120" />
+          </div>
+          <h2>Já são <span class="highlight">mais de 350 empreendedores</span> que deixaram a burocracia pra trás e evoluíram com a RBF.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="niches" id="solucoes">
+      <div class="container">
+        <div class="niches-header">
+          <div>
+            <h2>Soluções para o seu nicho</h2>
+            <p class="niches-subtitle">Selecione sua área e veja como a RBF pode ajudar você.</p>
+          </div>
+        </div>
+
+        <div class="niches-tabs">
+          <button class="niches-tab active" data-tab="0">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Serviços Gerais
+          </button>
+          <button class="niches-tab" data-tab="1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Beleza e Bem-Estar
+          </button>
+          <button class="niches-tab" data-tab="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Alimentação
+          </button>
+          <button class="niches-tab" data-tab="3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Comércio e Vendas
+          </button>
+          <button class="niches-tab" data-tab="4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Tecnologia Digital
+          </button>
+          <button class="niches-tab" data-tab="5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Educação
+          </button>
+          <button class="niches-tab" data-tab="6">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="15" height="13" rx="1" stroke="currentColor" stroke-width="2"/><path d="M16 8h4l3 5v3h-7V8zM5.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Transporte
+          </button>
+          <button class="niches-tab" data-tab="7">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Administrativo
+          </button>
+          <button class="niches-tab" data-tab="8">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Arte e Criatividade
+          </button>
+        </div>
+
+        <div class="niches-panels">
+          <div class="niches-panel active" data-panel="0">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Serviços Gerais">
+              </div>
+              <div class="panel-content">
+                <h3>Serviços Gerais</h3>
+                <p>Contabilidade especializada para profissionais autônomos. Clique na sua profissão e fale com um especialista.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Eletricista</button>
+                  <button class="niche-btn cta-whatsapp">Encanador</button>
+                  <button class="niche-btn cta-whatsapp">Pintor</button>
+                  <button class="niche-btn cta-whatsapp">Pedreiro</button>
+                  <button class="niche-btn cta-whatsapp">Marceneiro</button>
+                  <button class="niche-btn cta-whatsapp">Jardineiro</button>
+                  <button class="niche-btn cta-whatsapp">Mecânico</button>
+                  <button class="niche-btn cta-whatsapp">Chaveiro</button>
+                  <button class="niche-btn cta-whatsapp">Técnico de informática</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="1">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beleza e Bem-Estar">
+              </div>
+              <div class="panel-content">
+                <h3>Beleza e Bem-Estar</h3>
+                <p>Organize sua empresa e fique em dia com a Receita Federal. Clique na sua profissão.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Cabeleireiro</button>
+                  <button class="niche-btn cta-whatsapp">Manicure e Pedicure</button>
+                  <button class="niche-btn cta-whatsapp">Maquiador</button>
+                  <button class="niche-btn cta-whatsapp">Depilador</button>
+                  <button class="niche-btn cta-whatsapp">Massoterapeuta</button>
+                  <button class="niche-btn cta-whatsapp">Designer de Sobrancelhas</button>
+                  <button class="niche-btn cta-whatsapp">Esteticista</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="2">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alimentação">
+              </div>
+              <div class="panel-content">
+                <h3>Alimentação</h3>
+                <p>Da marmita ao food truck, cuidamos de toda a parte contábil para você focar no seu negócio.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Fornecedor de Marmitas</button>
+                  <button class="niche-btn cta-whatsapp">Confeiteiro</button>
+                  <button class="niche-btn cta-whatsapp">Padeiro Artesanal</button>
+                  <button class="niche-btn cta-whatsapp">Food Truck</button>
+                  <button class="niche-btn cta-whatsapp">Vendedor Ambulante</button>
+                  <button class="niche-btn cta-whatsapp">Cozinheiro Independente</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="3">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Comércio e Vendas">
+              </div>
+              <div class="panel-content">
+                <h3>Comércio e Vendas</h3>
+                <p>Venda mais com a segurança de uma contabilidade que entende o seu mercado.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Vendedor Ambulante</button>
+                  <button class="niche-btn cta-whatsapp">Revendedor de Roupas</button>
+                  <button class="niche-btn cta-whatsapp">Brechó</button>
+                  <button class="niche-btn cta-whatsapp">Artesanato</button>
+                  <button class="niche-btn cta-whatsapp">E-commerce</button>
+                  <button class="niche-btn cta-whatsapp">Representante Comercial</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="4">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tecnologia e Digital">
+              </div>
+              <div class="panel-content">
+                <h3>Tecnologia e Serviços Digitais</h3>
+                <p>Sua empresa digital, 100% regularizada e sem burocracia. Clique na sua área.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Designer Gráfico</button>
+                  <button class="niche-btn cta-whatsapp">Social Media</button>
+                  <button class="niche-btn cta-whatsapp">Fotógrafo e Videomaker</button>
+                  <button class="niche-btn cta-whatsapp">Editor de Vídeo</button>
+                  <button class="niche-btn cta-whatsapp">Programador</button>
+                  <button class="niche-btn cta-whatsapp">Criador de Conteúdo</button>
+                  <button class="niche-btn cta-whatsapp">Suporte Técnico</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="5">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Educação">
+              </div>
+              <div class="panel-content">
+                <h3>Educação e Treinamentos</h3>
+                <p>Ensine com tranquilidade e deixe a contabilidade com a gente.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Professor Particular</button>
+                  <button class="niche-btn cta-whatsapp">Instrutor de Idiomas</button>
+                  <button class="niche-btn cta-whatsapp">Instrutor de Informática</button>
+                  <button class="niche-btn cta-whatsapp">Treinador Esportivo</button>
+                  <button class="niche-btn cta-whatsapp">Coach</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="6">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Transporte">
+              </div>
+              <div class="panel-content">
+                <h3>Transporte e Logística</h3>
+                <p>Regularize seu MEI e dirija com mais segurança jurídica e financeira.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Motoboy</button>
+                  <button class="niche-btn cta-whatsapp">Entregador</button>
+                  <button class="niche-btn cta-whatsapp">Transportador de Cargas</button>
+                  <button class="niche-btn cta-whatsapp">Motorista de Aplicativo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="7">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Administrativo">
+              </div>
+              <div class="panel-content">
+                <h3>Serviços Administrativos</h3>
+                <p>Mais organização para o seu negócio, menos dor de cabeça com burocracia.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Digitador</button>
+                  <button class="niche-btn cta-whatsapp">Auxiliar de Escritório</button>
+                  <button class="niche-btn cta-whatsapp">Promotor de Vendas</button>
+                  <button class="niche-btn cta-whatsapp">Consultor Administrativo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="niches-panel" data-panel="8">
+            <div class="panel-inner">
+              <div class="panel-image">
+                <img src="https://images.pexels.com/photos/1646953/pexels-photo-1646953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Arte e Criatividade">
+              </div>
+              <div class="panel-content">
+                <h3>Arte e Produção Criativa</h3>
+                <p>Transforme sua arte em negócio com toda a estrutura contábil que você precisa.</p>
+                <div class="niche-buttons">
+                  <button class="niche-btn cta-whatsapp">Artesão</button>
+                  <button class="niche-btn cta-whatsapp">Produtor de Eventos</button>
+                  <button class="niche-btn cta-whatsapp">Artista Visual</button>
+                  <button class="niche-btn cta-whatsapp">DJ</button>
+                  <button class="niche-btn cta-whatsapp">Decorador de Festas</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="materiais">
+      <div class="container">
+        <div class="process-header">
+          <p class="process-intro">A gente cuida do complexo e deixa <strong>sua jornada fácil</strong> desde o primeiro passo. <span class="highlight-text">Em poucos dias, você já está com tudo em ordem</span> — com suporte humano e guia no prazo.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Atendimento ativo durante os nossos meses</h3>
+            <p>Você para quem está começando agora, tu vende contratado.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Entenda cada passo, conheça sua equipe</h3>
+            <p>Uso nossos canais com autonomia desde o início — sem depender de ninguém.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Onboarding com reunião de boas-vindas</h3>
+            <p>Contrato prático, rápido e seguro, tudo 100% online.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">04</div>
+            <h3>Zero surpresas no contrato</h3>
+            <p>Sem letrinhas pequenas. O que está incluso, está claro — do início ao fim.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">05</div>
+            <h3>Abertura de empresa com reunião de boas-vindas</h3>
+            <p>Fale com quem resolve, no canal que preferir.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">06</div>
+            <h3>Suporte contínuo e crescimento garantido</h3>
+            <p>Suporte ativo, entregas no prazo e total segurança para sua empresa crescer.</p>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <button class="btn-primary">
+            Fale com um especialista
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-post" id="blog">
+      <div class="container">
+        <div class="blog-section-header">
+          <h2 class="blog-section-title">Fique de 👀</h2>
+          <p class="blog-section-subtitle">Conteúdo para você se manter informado sobre o mundo contábil e tributário.</p>
+        </div>
+        <div class="blog-post-inner">
+          <div class="blog-post-meta">
+            <span class="blog-tag">Reforma Tributária</span>
+            <span class="blog-date">Abril de 2026</span>
+          </div>
+          <h2 class="blog-post-title">Reforma Tributária: o que é e o que muda no Brasil</h2>
+          <div class="blog-post-author">
+            <div class="author-avatar">FS</div>
+            <div>
+              <span class="author-name">Fernanda dos Santos</span>
+              <span class="author-role">Especialista Contábil</span>
+            </div>
+          </div>
+          <div class="blog-post-body">
+            <p>A reforma tributária é uma mudança no sistema de impostos de um país, com o objetivo de torná-lo mais simples, justo e eficiente. No Brasil, esse tema vem sendo discutido há décadas e ganhou força recente com a aprovação de mudanças importantes.</p>
+
+            <div class="blog-expandable">
+              <div class="blog-expandable-content">
+                <h3>O que é a reforma tributária?</h3>
+                <p>É a reorganização das regras de cobrança de impostos — como eles são calculados, cobrados e distribuídos entre União, estados e municípios.</p>
+
+                <h3>Reforma tributária no Brasil (recente)</h3>
+                <p>Em 2023, o Brasil aprovou uma das maiores mudanças no sistema tributário por meio da Emenda Constitucional 132. Os principais pontos são:</p>
+
+                <h4>Substituição de impostos</h4>
+                <p>Vários tributos atuais serão unificados:</p>
+                <ul>
+                  <li>PIS e Cofins substituídos pela CBS (Contribuição sobre Bens e Serviços)</li>
+                  <li>ICMS e ISS substituídos pelo IBS (Imposto sobre Bens e Serviços)</li>
+                </ul>
+                <p>A ideia é criar um sistema parecido com o IVA (Imposto sobre Valor Agregado), usado em muitos países.</p>
+
+                <h4>Criação do IVA dual</h4>
+                <p>O novo modelo terá dois impostos principais:</p>
+                <ul>
+                  <li>CBS (federal)</li>
+                  <li>IBS (estadual e municipal)</li>
+                </ul>
+
+                <h4>Imposto seletivo</h4>
+                <p>Um novo imposto será aplicado a produtos prejudiciais à saúde ou ao meio ambiente (ex: cigarro, bebidas alcoólicas).</p>
+
+                <h4>Tributação no destino</h4>
+                <p>O imposto passa a ser cobrado no local de consumo, e não de produção.</p>
+
+                <h4>Cashback</h4>
+                <p>Parte dos impostos pode ser devolvida para famílias de baixa renda em alguns casos.</p>
+
+                <h3>Objetivos da reforma</h3>
+                <ul>
+                  <li>Simplificar o sistema (menos burocracia)</li>
+                  <li>Reduzir a cumulatividade de impostos</li>
+                  <li>Aumentar a transparência</li>
+                  <li>Melhorar o ambiente de negócios</li>
+                </ul>
+
+                <h3>Pontos de debate</h3>
+                <ul>
+                  <li>Possível aumento de carga tributária em alguns setores (como serviços)</li>
+                  <li>Transição longa (até cerca de 2033)</li>
+                  <li>Definição das alíquotas ainda depende de leis complementares</li>
+                </ul>
+
+                <h3>Quando entra em vigor?</h3>
+                <ul>
+                  <li>Começa a ser implementada em 2026</li>
+                  <li>Transição gradual até 2033</li>
+                </ul>
+              </div>
+              <div class="blog-blur-overlay"></div>
+            </div>
+            <div class="blog-read-more-wrap">
+              <button class="blog-read-more-btn" id="blogReadMore">
+                Ler mais
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contato">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <!-- <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
+              <circle cx="16" cy="16" r="14" fill="#10B981" stroke="#fff" stroke-width="2"/>
+              <circle cx="16" cy="16" r="8" fill="#fff"/>
+              <text x="40" y="22" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">RBF</text>
+            </svg> -->
+            <img src="./logo_256.png" style="background-color: white; width: 120px; border-radius: 20px;" />
+            <p>Sua contabilidade inteligente</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Serviços</h4>
+              <a href="https://wa.me/5514997304645?text=Ol%C3%A1%20RBF%20eu%20preciso%20de%20ajuda%20com%20Contabilidade" target="_blank" rel="noopener noreferrer">Contabilidade</a>
+              <a href="https://wa.me/5514997304645?text=Ol%C3%A1%20RBF%20eu%20preciso%20de%20ajuda%20com%20Impostos" target="_blank" rel="noopener noreferrer">Impostos</a>
+              <a href="https://wa.me/5514997304645?text=Ol%C3%A1%20RBF%20eu%20preciso%20de%20ajuda%20com%20Consultoria" target="_blank" rel="noopener noreferrer">Consultoria</a>
+            </div>
+            <div class="footer-column">
+              <h4>Empresa</h4>
+              <a href="https://wa.me/5514997304645?text=Ol%C3%A1%20RBF%2C%20gostaria%20de%20entrar%20em%20contato" target="_blank" rel="noopener noreferrer">Contato</a>
+            </div>
+            <div class="footer-column">
+              <h4>Contato</h4>
+              <a href="mailto:contato@rbfescritoriocontabil.com.br">contato@rbfescritoriocontabil.com.br</a>
+              <a href="tel:+5514997304645">(14) 99730-4645</a>
+              <div class="footer-social">
+                <a href="https://www.instagram.com/rbf.contabil?igsh=aHFuZjM0d21mcW13" class="social-icon" aria-label="Instagram" id="footer-instagram">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                </a>
+                <a href="https://wa.me/5514997304645" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.984-1.304A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 RBF. Todos os direitos reservados.</p>
+          <p class="footer-raviga">Desenvolvido por <a href="https://raviga.com.br" target="_blank" rel="noopener noreferrer" class="raviga-link">raviga.com.br</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
